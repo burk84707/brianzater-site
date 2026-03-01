@@ -1,17 +1,202 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Brian Zater">
+
+  <!-- HERO -->
+
+  <section class="section hero">
+    <h1>Brian Zater</h1>
+    <p class="hero-subtitle">
+      Author. Advocate. Architect of Redemption.
+    </p>
+    <p class="hero-description">
+      A forward-looking voice focused on transformation, responsibility, and measurable impact.
+      This platform documents Brian's work, advocacy initiatives, and formal clemency petition.
+    </p>
+    <div class="hero-actions">
+      <a href="/clemency" class="button-primary">Read the Clemency Petition</a>
+      <a href="/work" class="button-secondary">Explore the Book</a>
+    </div>
+  </section>
+
+  <!-- STORY SUMMARY -->
+
+  <section class="section">
+    <div class="section-header">
+      <h2>The Story</h2>
+      <a href="/story">Read Full Story →</a>
+    </div>
+    <p>
+      Brian's journey reflects accountability, growth, and a long-term commitment to constructive change.
+      His work today is grounded in responsibility and future-focused leadership.
+    </p>
+  </section>
+
+  <!-- WORK -->
+
+  <section class="section">
+    <h2>The Work</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Tree of Life</h3>
+        <p>A structured reflection on personal responsibility and growth.</p>
+        <a href="/work">Learn More →</a>
+      </div>
+      <div class="card">
+        <h3>Goal Cards</h3>
+        <p>Practical tools for intentional thinking and disciplined execution.</p>
+        <a href="/work">Learn More →</a>
+      </div>
+      <div class="card">
+        <h3>Purpose App</h3>
+        <p>A digital extension of long-term accountability and structured goal setting.</p>
+        <a href="/work">Learn More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section class="section">
+    <h2>Advocacy Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Gun Buyback Program</h3>
+        <p>A community-based initiative focused on prevention and public safety.</p>
+        <a href="/projects">View Project →</a>
+      </div>
+      <div class="card">
+        <h3>NC Book Project</h3>
+        <p>Expanding access to structured reflection materials within correctional environments.</p>
+        <a href="/projects">View Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLEMENCY -->
+
+  <section class="section">
+    <h2>Clemency</h2>
+    <p>
+      The formal clemency petition outlines the legal foundation, personal development,
+      institutional record, and community support surrounding this request.
+    </p>
+    <a href="/clemency" class="button-primary">View Petition Overview</a>
+  </section>
+
+  <!-- MEDIA -->
+
+  <section class="section">
+    <h2>Media</h2>
+    <p>Interviews, discussions, and public-facing material.</p>
+    <div class="video-placeholder">
+      YouTube video embed will go here.
+    </div>
+  </section>
+
+  <!-- BLOG -->
+
+  <section class="section">
+    <h2>Latest Writing</h2>
+    <p>Weekly reflections and updates will appear here.</p>
+    <a href="/blog">Visit the Blog →</a>
+  </section>
+
+</MainLayout>
+
+<style>
+  .section {
+    margin-top: 5rem;
+  }
+
+  .hero {
+    margin-top: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .card {
+    padding: 1.75rem;
+    border: 1px solid rgba(30, 58, 138, 0.12);
+    border-radius: 10px;
+    background: #ffffff;
+  }
+
+  .card h3 {
+    margin-top: 0;
+  }
+
+  .button-primary {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background: #1e3a8a;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+
+  .button-primary:hover {
+    background: #1e40af;
+  }
+
+  .button-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #1e3a8a;
+    color: #1e3a8a;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+
+  .button-secondary:hover {
+    background: rgba(30, 58, 138, 0.06);
+  }
+
+  .video-placeholder {
+    margin-top: 1.5rem;
+    padding: 3rem;
+    border: 1px dashed rgba(30, 58, 138, 0.25);
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
