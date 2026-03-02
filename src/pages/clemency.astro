@@ -1,29 +1,146 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import PetitionSection from '../components/PetitionSection.astro';
+
+const PETITION_URL =
+  'https://www.change.org/p/support-brian-zater-s-sentence-reduction-a-case-for-redemption-and-rehabilitation';
+const FORM_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLScdPUG8dRJba5v4N59ryfXcit_9mtqa1sIRyIYf0b8n0fkxDw/viewform?usp=header';
 ---
 
 <MainLayout title="Clemency & Public Support">
-  <h1>Clemency & Public Support</h1>
+  <section class="petition-hero">
+    <div class="petition-grid">
+      <div class="petition-content">
+        <h1>Merit Over Mercy</h1>
+        <p class="subtitle">Why Brian Zater Deserves His Freedom</p>
 
-  <p>
-    Brian Zater has submitted a formal clemency petition seeking a sentence reduction
-    based on demonstrated rehabilitation, institutional conduct, and documented contributions
-    over more than two decades of incarceration.
-  </p>
+        <h2>The Issue</h2>
 
-  <p>
-    This page provides an overview of the petition, supporting materials, and ways to
-    express public support. Your signature on the Change.org petition or a formal
-    statement of support helps demonstrate the breadth of belief in second chances and
-    evidence-based sentencing reform.
-  </p>
+        <h3>Who is impacted?</h3>
+        <p>
+          Brian Zater's case is one of profound transformation. While serving over 25 years in prison, Brian has dedicated himself to helping others through mentorship, education, and rehabilitation programs. He has mentored hundreds of inmates, taught thousands through classes like "The Ultimate Edge," and created programs that have reduced recidivism and saved lives. His efforts have positively impacted not only those in prison but also their families, communities, and society as a whole. Brian's rehabilitation is a testament to the power of second chances. True to his character, Brian often says that he does not want to be "given" an early release from his prison sentence but to "earn" early release—to show that he is worthy of freedom based on merit and the value he has added to others.
+        </p>
 
-  <p>
-    The petition outlines the legal foundation, personal development, institutional
-    record, and community support surrounding this request. All materials are available
-    for review.
-  </p>
+        <h3>What is at stake?</h3>
+        <p>
+          If Brian's sentence is not reduced, society loses the chance to benefit from his leadership-by-example, compassion, and contributions. Brian has proven time and again that he is a force for good, even behind bars. He has never received a disciplinary infraction, paid his restitution in full, and continues to inspire others to turn their lives around. Reducing his sentence would allow him to bring his mentorship and innovative programs into the community, helping to prevent crime and strengthen society. Conversely, keeping him incarcerated denies society the opportunity to benefit from his unique knowledge, skills, and drive to make the world better.
+        </p>
 
-  <PetitionSection />
+        <h3>Why is now the time to act?</h3>
+        <p>
+          Brian will soon file for the reduction of, first, his state sentence, then for his concurrent federal term. This is an opportunity to show support, a way to establish our support prior to his filing so that it can be a part of that filing. Brian's story of redemption is a powerful example of rehabilitation done right, and by acting now, we can demonstrate the importance of rewarding genuine change. It's time to honor his commitment to growth and ensure his contributions extend beyond the prison walls.
+        </p>
+
+        <div class="petition-actions">
+          <a href={PETITION_URL} target="_blank" rel="noopener noreferrer" class="primary-btn">
+            Sign the Petition
+          </a>
+          <a href={FORM_URL} target="_blank" rel="noopener noreferrer" class="secondary-btn">
+            Submit a Letter of Support
+          </a>
+        </div>
+      </div>
+
+      <div class="petition-image">
+        <img
+          src="/assets/petition image.jpg"
+          alt="Support Brian Zater Sentence Reduction Petition"
+        />
+      </div>
+    </div>
+  </section>
 </MainLayout>
+
+<style>
+  .petition-hero {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .petition-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .petition-content h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    margin-bottom: 30px;
+  }
+
+  .petition-content h2 {
+    margin-top: 40px;
+    font-size: 1.5rem;
+  }
+
+  .petition-content h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .petition-content h3 {
+    margin-top: 30px;
+    font-size: 1.1rem;
+  }
+
+  .petition-content p {
+    line-height: 1.7;
+    margin-top: 10px;
+    opacity: 0.9;
+  }
+
+  .petition-image img {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .petition-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .primary-btn {
+    background: #111111;
+    color: white;
+    padding: 14px 26px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+
+  .primary-btn:hover {
+    background: #333333;
+  }
+
+  .secondary-btn {
+    border: 1px solid #111111;
+    color: #111111;
+    padding: 14px 26px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+
+  .secondary-btn:hover {
+    background: rgba(17, 17, 17, 0.06);
+  }
+
+  @media (max-width: 900px) {
+    .petition-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .petition-image {
+      order: 2;
+    }
+  }
+</style>

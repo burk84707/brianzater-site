@@ -1,84 +1,80 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+
+const AMAZON_URL = 'https://www.amazon.com/Tree-Life-Sowing-Seeds-Destiny/dp/B0GH2HSBMB/';
 ---
 
 <MainLayout title="Tree of Life | Brian Zater">
-  <!-- SECTION 1: Full-Width Dark Hero -->
+  <!-- SECTION 1: HERO -->
   <div class="tol-hero-outer">
     <div class="tol-hero-bg" aria-hidden="true"></div>
     <div class="tol-hero-inner">
       <div class="tol-hero-content">
-        <img
-          src="/assets/Book Image.jpg"
-          alt="Tree of Life book cover"
-          class="tol-book-cover"
-          width="290"
-          height="435"
-        />
         <div class="tol-hero-text">
-          <h1 class="tol-title">Tree of Life</h1>
-          <p class="tol-subtitle">Sowing Your Seeds of Destiny</p>
-          <p class="tol-author">By Brian Zater</p>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="tol-cta-primary">
-            Purchase on Amazon
-          </a>
+          <h1>The Tree of Life</h1>
+          <p class="subtitle">Sowing Your Seeds of Destiny</p>
+          <p class="lead">
+            This book is for anyone ready to take ownership of their future. It provides a clear, structured system for defining goals, aligning daily action with long-term vision, and building measurable progress across every area of life.
+          </p>
+          <div class="tol-hero-actions">
+            <a href={AMAZON_URL} target="_blank" rel="noopener noreferrer" class="tol-cta-primary">
+              Purchase on Amazon
+            </a>
+            <a
+              href="https://www.facebook.com/brianzater"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="tol-cta-secondary"
+            >
+              Follow on Facebook
+            </a>
+          </div>
+        </div>
+        <div class="tol-hero-image">
+          <img
+            src="/assets/Book Image.jpg"
+            alt="Tree of Life book cover"
+            width="320"
+            height="480"
+          />
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 2: Description (Light Background) -->
+  <!-- SECTION 2: THE FRAMEWORK -->
   <section class="tol-section">
-    <h2>About the Book</h2>
+    <h2>The Framework</h2>
     <p>
-      Tree of Life is a structured reflection framework designed to help readers
-      examine personal responsibility, growth, and long-term intention. The book
-      provides practical tools for aligning daily actions with broader purpose
-      and measurable outcomes.
+      The Tree of Life introduces a disciplined model for personal growth built around five core areas of life: Relationships, Career, Health & Fitness, Spiritual Development, and Outreach. Rather than offering abstract motivation, the book provides a structured method for setting clear targets and tracking measurable progress.
+    </p>
+    <h3>From Intention to Action</h3>
+    <p>
+      Each chapter moves beyond theory and into execution. Readers are guided through daily, weekly, monthly, quarterly, and annual goal-setting practices designed to create forward momentum. The system emphasizes accountability, clarity, and consistency — transforming aspiration into sustained action.
     </p>
   </section>
 
-  <section class="tol-section">
-    <h2>Who It Is For</h2>
-    <p>
-      This book is for anyone seeking a more intentional approach to planning
-      and accountability. It is especially relevant for individuals in
-      correctional settings, reentry programs, or anyone committed to
-      structured self-reflection and goal-setting.
-    </p>
-  </section>
-
-  <section class="tol-section">
-    <h2>Core Philosophy</h2>
-    <p>
-      The framework centers on the idea that small, consistent actions compound
-      over time. By sowing seeds of intention through daily practice, readers
-      can build toward meaningful change and measurable progress across
-      personal, professional, and relational dimensions.
-    </p>
-  </section>
-
-  <!-- SECTION 3: Goal Cards Bridge -->
+  <!-- SECTION 3: GOAL CARDS -->
   <section class="tol-section">
     <h2>Goal Cards</h2>
     <p>
-      Goal Cards are practical 2" x 3" structured intention cards used for
-      daily, weekly, monthly, 90-day, 1-year, and 5-year planning. They extend
-      the Tree of Life framework into tangible tools for disciplined execution.
+      At the heart of the book is the Goal Card system — a practical tool for keeping your priorities visible and actionable. By defining goals across all five life areas and revisiting them consistently, readers reinforce direction, discipline, and intentional focus.
     </p>
-    <a href="/tree-of-life/goal-cards" class="tol-button-secondary">Explore Goal Cards</a>
+    <a href="/tree-of-life/goal-cards" class="tol-button-secondary">View Printable Goal Cards</a>
   </section>
 
-  <!-- SECTION 4: Final CTA -->
-  <section class="tol-section tol-cta-final">
-    <a href="#" target="_blank" rel="noopener noreferrer" class="tol-cta-primary">
-      Purchase on Amazon
-    </a>
+  <!-- SECTION 4: WHY IT MATTERS -->
+  <section class="tol-section">
+    <h2>Why It Matters</h2>
+    <p>
+      Long-term growth does not happen by accident. It requires structure, repetition, and personal responsibility. The Tree of Life is not a collection of inspirational ideas — it is a system designed to help individuals cultivate measurable improvement and build a life aligned with purpose.
+    </p>
   </section>
+
 </MainLayout>
 
 <style>
-  /* SECTION 1: Full-Width Dark Hero */
+  /* SECTION 1: HERO */
   .tol-hero-outer {
     width: 100vw;
     margin-left: calc(50% - 50vw);
@@ -119,26 +115,19 @@ import MainLayout from '../layouts/MainLayout.astro';
   .tol-hero-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 3rem;
     flex-wrap: wrap;
   }
 
-  .tol-book-cover {
-    width: 100%;
-    max-width: 290px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-    flex-shrink: 0;
-  }
-
   .tol-hero-text {
-    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 520px;
     color: #ffffff;
   }
 
-  .tol-title {
+  .tol-hero-text h1 {
     font-size: 3.25rem;
     font-weight: 700;
     letter-spacing: -0.03em;
@@ -147,17 +136,18 @@ import MainLayout from '../layouts/MainLayout.astro';
     color: #ffffff;
   }
 
-  .tol-subtitle {
+  .subtitle {
     font-size: 1.35rem;
     font-weight: 500;
-    margin: 0 0 0.5rem;
+    margin: 0 0 1rem;
     color: rgba(255, 255, 255, 0.9);
   }
 
-  .tol-author {
-    font-size: 1rem;
+  .lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
     margin: 0 0 1.5rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .tol-cta-primary {
@@ -176,17 +166,61 @@ import MainLayout from '../layouts/MainLayout.astro';
     background: #1e40af;
   }
 
-  /* SECTION 2 & 3: Light sections */
+  .tol-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .tol-cta-secondary {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .tol-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .tol-hero-image {
+    flex-shrink: 0;
+  }
+
+  .tol-hero-image img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  /* SECTIONS 2–4 */
   .tol-section {
     margin-top: 3.5rem;
   }
 
   .tol-section h2 {
     margin-top: 0;
+    font-size: 1.5rem;
   }
 
-  .tol-section h2:not(:first-child) {
-    margin-top: 3rem;
+  .tol-section h3 {
+    margin-top: 2rem;
+    font-size: 1.125rem;
+  }
+
+  .tol-section p {
+    margin: 0 0 1rem;
+    max-width: 75ch;
   }
 
   .tol-button-secondary {
@@ -206,18 +240,6 @@ import MainLayout from '../layouts/MainLayout.astro';
     border-color: #1e40af;
   }
 
-  /* SECTION 4: Final CTA */
-  .tol-cta-final {
-    text-align: center;
-    margin-top: 5rem;
-    padding-top: 2rem;
-  }
-
-  .tol-cta-final .tol-cta-primary {
-    background: #1e3a8a;
-    color: #ffffff;
-  }
-
   @media (min-width: 768px) {
     .tol-hero-text {
       text-align: left;
@@ -234,19 +256,23 @@ import MainLayout from '../layouts/MainLayout.astro';
       gap: 2rem;
     }
 
-    .tol-book-cover {
-      max-width: 280px;
+    .tol-hero-text {
+      text-align: center;
     }
 
-    .tol-hero-text {
+    .tol-hero-image {
       order: 2;
     }
 
-    .tol-title {
+    .tol-hero-image img {
+      max-width: 280px;
+    }
+
+    .tol-hero-text h1 {
       font-size: 2.25rem;
     }
 
-    .tol-subtitle {
+    .subtitle {
       font-size: 1.15rem;
     }
   }

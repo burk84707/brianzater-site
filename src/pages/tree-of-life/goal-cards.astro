@@ -1,0 +1,282 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const cardTypes = [
+  { id: 'today', label: 'Today', header: "Today's Goal Card" },
+  { id: '7day', label: '7 Day', header: '7 Day Goal Card' },
+  { id: '30day', label: '30 Day', header: '30 Day Goal Card' },
+  { id: '90day', label: '90 Day', header: '90 Day Goal Card' },
+  { id: '6month', label: '6 Month', header: '6 Month Goal Card' },
+  { id: '1year', label: '1 Year', header: '1 Year Goal Card' },
+];
+
+const lifeAreas = ['Relationships', 'Career', 'Health / Fitness', 'Spiritual', 'Outreach'];
+---
+
+<MainLayout title="Goal Cards | Brian Zater">
+  <button type="button" onclick="window.print()" class="print-btn">
+    Print Goal Cards
+  </button>
+
+  <!-- 1. Intro Section -->
+  <section class="intro">
+    <h1>Goal Cards</h1>
+    <p>
+      Goal Cards are practical 3" x 2" structured intention cards for daily, weekly,
+      monthly, and long-term planning. They extend the Tree of Life framework into
+      tangible tools for disciplined execution.
+    </p>
+    <blockquote class="goal-quote">
+      Keep your goal card in your pocket. Every time you touch it you'll think of and have a positive emotional response to your goals. This accumulates energy, changing perspective to see the world through the lens of your goals. Then your eyes see opportunities related to them. Thinking, feeling and seeing build into motivation, causing you to take steps that otherwise never would have been taken. Simultaneously, the build up of energy will draw to you more opportunities. These ingredients—touching, thinking, feeling, attracting, acting—work together to guarantee the achievement of your goals, as long as you don't give up. In this way, you successfully sow the seeds of your destiny.
+    </blockquote>
+  </section>
+
+  <!-- 2. Card Type Selector -->
+  <section class="selector-section">
+    <div class="selector-buttons" role="tablist">
+      {cardTypes.map((type) => (
+        <button
+          type="button"
+          class="selector-btn"
+          data-sheet={type.id}
+          aria-pressed={type.id === 'today'}
+        >
+          {type.label}
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <!-- 3. Printable Card Sheets -->
+  {cardTypes.map((type) => (
+    <div
+      class={`print-sheet-wrapper ${type.id === 'today' ? 'is-visible' : ''}`}
+      data-sheet={type.id}
+    >
+      <div class="print-sheet">
+        {[1, 2, 3, 4].map(() => (
+          <div class="goal-card">
+            <div class="card-header">{type.header}</div>
+            <div class="header-divider"></div>
+            <div class="lines-container">
+              {lifeAreas.map((area) => (
+                <div class="line-row">
+                  <span class="label">{area}</span>
+                  <span class="fill-line"></span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+
+  <script is:inline>
+    (function () {
+      const root = document.currentScript.closest('main')?.parentElement;
+      if (!root) return;
+
+      const buttons = root.querySelectorAll('.selector-btn');
+      const sheets = root.querySelectorAll('.print-sheet-wrapper');
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const sheetId = btn.getAttribute('data-sheet');
+          buttons.forEach(function (b) {
+            b.setAttribute('aria-pressed', b.getAttribute('data-sheet') === sheetId ? 'true' : 'false');
+          });
+          sheets.forEach(function (s) {
+            s.classList.toggle('is-visible', s.getAttribute('data-sheet') === sheetId);
+          });
+        });
+      });
+    })();
+  </script>
+</MainLayout>
+
+<style>
+  .print-btn {
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background: #ffffff;
+    border: 1px solid #222222;
+    color: #222222;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+
+  .print-btn:hover {
+    background: #f0f0f0;
+  }
+
+  .intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .intro h1 {
+    margin-top: 0;
+  }
+
+  .goal-quote {
+    margin: 2rem 0;
+    padding: 1.5rem 1.75rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #222222;
+    border-left: 3px solid #222222;
+    background: #fafafa;
+  }
+
+  .selector-section {
+    margin-bottom: 2rem;
+  }
+
+  .selector-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .selector-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background: #ffffff;
+    border: 1px solid #222222;
+    color: #222222;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .selector-btn:hover {
+    background: #f0f0f0;
+  }
+
+  .selector-btn[aria-pressed='true'] {
+    background: #222222;
+    color: #ffffff;
+  }
+
+  .print-sheet-wrapper {
+    display: none;
+    margin-bottom: 3rem;
+  }
+
+  .print-sheet-wrapper.is-visible {
+    display: block;
+  }
+
+  .print-sheet {
+    display: grid;
+    grid-template-columns: repeat(2, 3in);
+    grid-template-rows: repeat(2, 2in);
+    gap: 0.5in;
+    justify-content: center;
+    margin-bottom: 0.75in;
+  }
+
+  .goal-card {
+    width: 3in;
+    height: 2in;
+    border: 1.25px solid #222222;
+    border-radius: 6px;
+    padding-top: 0.2in;
+    padding-bottom: 0.2in;
+    padding-left: 0.25in;
+    padding-right: 0.25in;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-header {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-bottom: 0.08in;
+    color: #222222;
+  }
+
+  .header-divider {
+    height: 1px;
+    background: #444444;
+    margin-bottom: 0.12in;
+  }
+
+  .lines-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  .line-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .label {
+    font-size: 0.62rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #222222;
+  }
+
+  .fill-line {
+    flex: 1;
+    border-bottom: 1.5px solid #555555;
+    height: 0;
+  }
+</style>
+
+<style is:global>
+  @media print {
+    .print-btn {
+      display: none !important;
+    }
+
+    .layout-header {
+      display: none !important;
+    }
+
+    .layout-main {
+      padding: 0 !important;
+    }
+
+    .selector-section {
+      display: none !important;
+    }
+
+    .print-sheet-wrapper {
+      display: block !important;
+      margin: 0 !important;
+    }
+
+    .print-sheet-wrapper:not(.is-visible) {
+      display: none !important;
+    }
+
+    .print-sheet {
+      page-break-after: always;
+      page-break-inside: avoid;
+      gap: 0.5in;
+      margin: 0 0 0.75in;
+      padding: 0;
+    }
+
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
+</style>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brianzater.com/sitemap-index.xml
