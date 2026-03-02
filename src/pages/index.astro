@@ -4,120 +4,94 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <MainLayout title="Brian Zater">
 
-  <!-- HERO -->
-
-  <section class="section hero">
-    <h1>Brian Zater</h1>
-    <p class="hero-subtitle">
-      Author. Advocate. Architect of Redemption.
-    </p>
-    <p class="hero-description">
-      A forward-looking voice focused on transformation, responsibility, and measurable impact.
-      This platform documents Brian's work, advocacy initiatives, and formal clemency petition.
-    </p>
-    <div class="hero-actions">
-      <a href="/clemency" class="button-primary">Read the Clemency Petition</a>
-      <a href="/work" class="button-secondary">Explore the Book</a>
-    </div>
-  </section>
-
-  <!-- STORY SUMMARY -->
-
-  <section class="section">
-    <div class="section-header">
-      <h2>The Story</h2>
-      <a href="/story">Read Full Story →</a>
-    </div>
-    <p>
-      Brian's journey reflects accountability, growth, and a long-term commitment to constructive change.
-      His work today is grounded in responsibility and future-focused leadership.
-    </p>
-  </section>
-
-  <!-- WORK -->
-
-  <section class="section">
-    <h2>The Work</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Tree of Life</h3>
-        <p>A structured reflection on personal responsibility and growth.</p>
-        <a href="/work">Learn More →</a>
+  <!-- 1. HERO — Split Editorial Layout -->
+  <section class="hero-split">
+    <div class="hero-split-content">
+      <div class="hero-split-text">
+        <h1>Brian Zater</h1>
+        <p class="hero-subtitle">Author. Advocate. Architect of Redemption.</p>
+        <p class="hero-description">
+          A forward-looking voice focused on transformation, responsibility, and measurable impact.
+          This platform documents Brian's work, advocacy initiatives, and formal clemency petition.
+        </p>
+        <div class="hero-actions">
+          <a href="/clemency" class="button-primary">Clemency Overview</a>
+          <a href="/tree-of-life" class="button-secondary">Tree of Life</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Goal Cards</h3>
-        <p>Practical tools for intentional thinking and disciplined execution.</p>
-        <a href="/work">Learn More →</a>
-      </div>
-      <div class="card">
-        <h3>Purpose App</h3>
-        <p>A digital extension of long-term accountability and structured goal setting.</p>
-        <a href="/work">Learn More →</a>
+      <div class="hero-split-image">
+        <img
+          src="/assets/Brian Zater.png"
+          alt="Brian Zater"
+          width="480"
+          height="480"
+        />
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-
-  <section class="section">
-    <h2>Advocacy Projects</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Gun Buyback Program</h3>
-        <p>A community-based initiative focused on prevention and public safety.</p>
-        <a href="/projects">View Project →</a>
+  <!-- 2. TREE OF LIFE FEATURE — Split Layout -->
+  <section class="section tree-feature">
+    <div class="tree-feature-content">
+      <div class="tree-feature-image">
+        <img
+          src="/assets/Book Image.jpg"
+          alt="Tree of Life book cover"
+          width="320"
+          height="480"
+        />
       </div>
-      <div class="card">
-        <h3>NC Book Project</h3>
-        <p>Expanding access to structured reflection materials within correctional environments.</p>
-        <a href="/projects">View Project →</a>
+      <div class="tree-feature-text">
+        <h2>Tree of Life</h2>
+        <p class="tree-subtitle">Sowing Your Seeds of Destiny</p>
+        <p>
+          Tree of Life is a structured reflection framework designed to help readers
+          examine personal responsibility, growth, and long-term intention. The book
+          provides practical tools for aligning daily actions with broader purpose
+          and measurable outcomes.
+        </p>
+        <a href="/tree-of-life" class="button-primary">Explore the Book</a>
       </div>
     </div>
   </section>
 
-  <!-- CLEMENCY -->
-
-  <section class="section">
+  <!-- 3. CLEMENCY FEATURE -->
+  <section class="section clemency-feature">
     <h2>Clemency</h2>
     <p>
       The formal clemency petition outlines the legal foundation, personal development,
       institutional record, and community support surrounding this request.
     </p>
-    <a href="/clemency" class="button-primary">View Petition Overview</a>
+    <a href="/clemency" class="button-primary">View Petition</a>
   </section>
 
-  <!-- MEDIA -->
-
-  <section class="section">
-    <h2>Media</h2>
-    <p>Interviews, discussions, and public-facing material.</p>
-    <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/oV3coDroCHQ"
-        title="Brian Zater Interview"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </section>
-
-  <!-- BLOG -->
-
-  <section class="section">
-    <h2>Latest Writing</h2>
-    <p>Weekly reflections and updates will appear here.</p>
-    <a href="/blog">Visit the Blog →</a>
+  <!-- 4. FINAL CTA STRIP -->
+  <section class="cta-strip">
+    <p class="cta-strip-statement">
+      Structured growth. Accountable leadership. Measurable impact.
+    </p>
+    <a href="/clemency" class="button-primary">Read the Clemency Petition</a>
   </section>
 
 </MainLayout>
 
 <style>
-  .section {
-    margin-top: 5rem;
+  /* 1. HERO — Split Editorial Layout */
+  .hero-split {
+    padding: 5rem 0 6rem;
   }
 
-  .hero {
-    margin-top: 3rem;
+  .hero-split-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-split-text {
+    flex: 1;
+    min-width: 280px;
+    max-width: 520px;
   }
 
   .hero-subtitle {
@@ -137,31 +111,101 @@ import MainLayout from '../layouts/MainLayout.astro';
     flex-wrap: wrap;
   }
 
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
+  .hero-split-image {
+    flex-shrink: 0;
   }
 
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .card {
-    padding: 1.75rem;
-    border: 1px solid rgba(30, 58, 138, 0.12);
+  .hero-split-image img {
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
     border-radius: 10px;
-    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   }
 
-  .card h3 {
+  /* 2. TREE OF LIFE FEATURE — Split Layout */
+  .section {
+    margin-top: 3.5rem;
+  }
+
+  .tree-feature-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .tree-feature-image {
+    flex-shrink: 0;
+  }
+
+  .tree-feature-image img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .tree-feature-text {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .tree-feature-text h2 {
     margin-top: 0;
   }
 
+  .tree-subtitle {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin: 0 0 1rem;
+    color: #333333;
+  }
+
+  .tree-feature-text p {
+    margin-bottom: 1.5rem;
+  }
+
+  /* 3. CLEMENCY FEATURE */
+  .clemency-feature {
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .clemency-feature h2 {
+    margin-top: 0;
+  }
+
+  .clemency-feature p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 4. FINAL CTA STRIP */
+  .cta-strip {
+    margin-top: 4rem;
+    padding: 4rem 1.5rem;
+    background: rgba(30, 58, 138, 0.04);
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .cta-strip-statement {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 0 1.5rem;
+    color: #111111;
+  }
+
+  /* Buttons */
   .button-primary {
     display: inline-block;
     padding: 0.75rem 1.25rem;
@@ -190,29 +234,42 @@ import MainLayout from '../layouts/MainLayout.astro';
     background: rgba(30, 58, 138, 0.06);
   }
 
-  .video-wrapper {
-    margin-top: 1.5rem;
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid rgba(30, 58, 138, 0.15);
-  }
-
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
   @media (max-width: 768px) {
-    .section-header {
+    .hero-split {
+      padding: 4rem 0 5rem;
+    }
+
+    .hero-split-content {
       flex-direction: column;
-      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .hero-split-text {
+      text-align: center;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-split-image {
+      order: 2;
+    }
+
+    .hero-split-image img {
+      max-width: 320px;
+    }
+
+    .tree-feature-content {
+      flex-direction: column;
+    }
+
+    .tree-feature-image {
+      order: 1;
+    }
+
+    .tree-feature-text {
+      order: 2;
     }
   }
 </style>

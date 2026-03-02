@@ -1,0 +1,253 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Tree of Life | Brian Zater">
+  <!-- SECTION 1: Full-Width Dark Hero -->
+  <div class="tol-hero-outer">
+    <div class="tol-hero-bg" aria-hidden="true"></div>
+    <div class="tol-hero-inner">
+      <div class="tol-hero-content">
+        <img
+          src="/assets/Book Image.jpg"
+          alt="Tree of Life book cover"
+          class="tol-book-cover"
+          width="290"
+          height="435"
+        />
+        <div class="tol-hero-text">
+          <h1 class="tol-title">Tree of Life</h1>
+          <p class="tol-subtitle">Sowing Your Seeds of Destiny</p>
+          <p class="tol-author">By Brian Zater</p>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="tol-cta-primary">
+            Purchase on Amazon
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: Description (Light Background) -->
+  <section class="tol-section">
+    <h2>About the Book</h2>
+    <p>
+      Tree of Life is a structured reflection framework designed to help readers
+      examine personal responsibility, growth, and long-term intention. The book
+      provides practical tools for aligning daily actions with broader purpose
+      and measurable outcomes.
+    </p>
+  </section>
+
+  <section class="tol-section">
+    <h2>Who It Is For</h2>
+    <p>
+      This book is for anyone seeking a more intentional approach to planning
+      and accountability. It is especially relevant for individuals in
+      correctional settings, reentry programs, or anyone committed to
+      structured self-reflection and goal-setting.
+    </p>
+  </section>
+
+  <section class="tol-section">
+    <h2>Core Philosophy</h2>
+    <p>
+      The framework centers on the idea that small, consistent actions compound
+      over time. By sowing seeds of intention through daily practice, readers
+      can build toward meaningful change and measurable progress across
+      personal, professional, and relational dimensions.
+    </p>
+  </section>
+
+  <!-- SECTION 3: Goal Cards Bridge -->
+  <section class="tol-section">
+    <h2>Goal Cards</h2>
+    <p>
+      Goal Cards are practical 2" x 3" structured intention cards used for
+      daily, weekly, monthly, 90-day, 1-year, and 5-year planning. They extend
+      the Tree of Life framework into tangible tools for disciplined execution.
+    </p>
+    <a href="/tree-of-life/goal-cards" class="tol-button-secondary">Explore Goal Cards</a>
+  </section>
+
+  <!-- SECTION 4: Final CTA -->
+  <section class="tol-section tol-cta-final">
+    <a href="#" target="_blank" rel="noopener noreferrer" class="tol-cta-primary">
+      Purchase on Amazon
+    </a>
+  </section>
+</MainLayout>
+
+<style>
+  /* SECTION 1: Full-Width Dark Hero */
+  .tol-hero-outer {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-bottom: 0;
+    background:
+      radial-gradient(circle at center, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+      #141414;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tol-hero-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    max-width: 90%;
+    height: auto;
+    min-height: 100%;
+    background-image: url('/assets/tree_for_book_super_clean.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .tol-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+  }
+
+  .tol-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .tol-book-cover {
+    width: 100%;
+    max-width: 290px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+  }
+
+  .tol-hero-text {
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .tol-title {
+    font-size: 3.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 0.5rem;
+    color: #ffffff;
+  }
+
+  .tol-subtitle {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin: 0 0 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .tol-author {
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .tol-cta-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: #1e3a8a;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.15s ease;
+  }
+
+  .tol-cta-primary:hover {
+    background: #1e40af;
+  }
+
+  /* SECTION 2 & 3: Light sections */
+  .tol-section {
+    margin-top: 3.5rem;
+  }
+
+  .tol-section h2 {
+    margin-top: 0;
+  }
+
+  .tol-section h2:not(:first-child) {
+    margin-top: 3rem;
+  }
+
+  .tol-button-secondary {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #1e3a8a;
+    color: #1e3a8a;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .tol-button-secondary:hover {
+    background: rgba(30, 58, 138, 0.06);
+    border-color: #1e40af;
+  }
+
+  /* SECTION 4: Final CTA */
+  .tol-cta-final {
+    text-align: center;
+    margin-top: 5rem;
+    padding-top: 2rem;
+  }
+
+  .tol-cta-final .tol-cta-primary {
+    background: #1e3a8a;
+    color: #ffffff;
+  }
+
+  @media (min-width: 768px) {
+    .tol-hero-text {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .tol-hero-inner {
+      padding: 4rem 1.25rem;
+    }
+
+    .tol-hero-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .tol-book-cover {
+      max-width: 280px;
+    }
+
+    .tol-hero-text {
+      order: 2;
+    }
+
+    .tol-title {
+      font-size: 2.25rem;
+    }
+
+    .tol-subtitle {
+      font-size: 1.15rem;
+    }
+  }
+</style>

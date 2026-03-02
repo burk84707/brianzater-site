@@ -1,0 +1,44 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Projects | Brian Zater">
+  <h1>Projects</h1>
+
+  <section class="project-section">
+    <h2>Tree of Life Prison Outreach</h2>
+    <p>
+      This initiative donates copies of Tree of Life to the South Carolina Department
+      of Corrections, expanding access to structured reflection materials within
+      correctional environments. The program aims to support rehabilitation and
+      intentional planning for individuals preparing for reentry.
+    </p>
+    <p class="project-status">In development.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Gun Buyback Initiative</h2>
+    <p>
+      A community-based initiative focused on prevention and public safety. The
+      program provides a structured pathway for voluntary firearm surrender,
+      supporting harm reduction and community wellbeing.
+    </p>
+  </section>
+</MainLayout>
+
+<style>
+  .project-section {
+    margin-top: 3.5rem;
+  }
+
+  .project-section h2 {
+    margin-top: 0;
+  }
+
+  .project-status {
+    font-size: 0.9375rem;
+    color: #555555;
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+</style>
