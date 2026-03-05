@@ -1,11 +1,17 @@
 ---
 import Navbar from '../components/Navbar.astro';
 
+const SITE_URL = 'https://brianzater.com';
+
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = 'Brian Zater' } = Astro.props;
+const { title = 'Brian Zater', description } = Astro.props;
+
+const metaDescription = description ?? 'Brian Zater — Author, advocate, and architect of redemption. Tree of Life, clemency advocacy, and structured personal growth.';
+const canonicalURL = `${SITE_URL}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
@@ -17,6 +23,16 @@ const { title = 'Brian Zater' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={metaDescription} />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonicalURL ?? SITE_URL} />
+    <meta property="og:site_name" content="Brian Zater" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={metaDescription} />
     <style is:global>
       *,
       *::before,

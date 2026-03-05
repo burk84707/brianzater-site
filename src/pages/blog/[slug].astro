@@ -13,6 +13,27 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
+const SITE_URL = 'https://brianzater.com';
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: 'Brian Zater',
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Brian Zater',
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/blog/${post.id}`,
+  },
+};
+
 function formatDate(date: Date) {
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -22,7 +43,11 @@ function formatDate(date: Date) {
 }
 ---
 
-<MainLayout title={`${post.data.title} | Brian Zater`}>
+<MainLayout
+  title={`${post.data.title} | Brian Zater`}
+  description={post.data.description}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
   <article class="post">
     <header class="post-header">
       <h1>{post.data.title}</h1>
