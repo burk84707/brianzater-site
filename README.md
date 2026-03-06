@@ -1,6 +1,6 @@
 # Brian Zater — Official Site
 
-Author site for Brian Zater: Tree of Life, clemency advocacy, and structured personal growth.
+Author site for Brian Zater: Tree of Life and structured personal growth.
 
 **Live:** [brianzater.com](https://brianzater.com)
 

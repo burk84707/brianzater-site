@@ -4,7 +4,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <MainLayout
   title="Brian Zater"
-  description="Brian Zater — Author, advocate, architect of redemption. Tree of Life book, clemency petition, and structured personal growth. Explore his work and advocacy."
+  description="Brian Zater — Author, advocate, architect of redemption. Tree of Life book and structured personal growth. Explore his work and advocacy."
 >
 
   <!-- 1. HERO — Split Editorial Layout -->
@@ -15,11 +15,10 @@ import MainLayout from '../layouts/MainLayout.astro';
         <p class="hero-subtitle">Author. Advocate. Architect of Redemption.</p>
         <p class="hero-description">
           A forward-looking voice focused on transformation, responsibility, and measurable impact.
-          This platform documents Brian's work, advocacy initiatives, and formal clemency petition.
+          This platform documents Brian's work and advocacy initiatives.
         </p>
         <div class="hero-actions">
-          <a href="/clemency" class="button-primary">Clemency Overview</a>
-          <a href="/tree-of-life" class="button-secondary">Tree of Life</a>
+          <a href="/tree-of-life" class="button-primary">Explore Tree of Life</a>
         </div>
       </div>
       <div class="hero-split-image">
@@ -58,22 +57,12 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
-  <!-- 3. CLEMENCY FEATURE -->
-  <section class="section clemency-feature">
-    <h2>Clemency</h2>
-    <p>
-      The formal clemency petition outlines the legal foundation, personal development,
-      institutional record, and community support surrounding this request.
-    </p>
-    <a href="/clemency" class="button-primary">View Petition</a>
-  </section>
-
-  <!-- 4. FINAL CTA STRIP -->
+  <!-- 3. FINAL CTA STRIP -->
   <section class="cta-strip">
     <p class="cta-strip-statement">
       Structured growth. Accountable leadership. Measurable impact.
     </p>
-    <a href="/clemency" class="button-primary">Read the Clemency Petition</a>
+    <a href="/tree-of-life" class="button-primary">Explore the Book</a>
   </section>
 
 </MainLayout>
@@ -175,24 +164,7 @@ import MainLayout from '../layouts/MainLayout.astro';
     margin-bottom: 1.5rem;
   }
 
-  /* 3. CLEMENCY FEATURE */
-  .clemency-feature {
-    text-align: center;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .clemency-feature h2 {
-    margin-top: 0;
-  }
-
-  .clemency-feature p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* 4. FINAL CTA STRIP */
+  /* 3. FINAL CTA STRIP */
   .cta-strip {
     margin-top: 4rem;
     padding: 4rem 1.5rem;
